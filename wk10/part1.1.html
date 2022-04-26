@@ -12,6 +12,13 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+        <script>
+            function reply_click(clicked_object)
+                {
+                    var sql = clicked_object.getAttribute('data-sql');
+                    editor.setValue(sql);
+                }
+        </script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -40,13 +47,12 @@
                     <button name="1.1.2" class="btn btn-success btn-block">1.1</button>
                     <button name="1.1.3" class="btn btn-success btn-block">1.1</button>
                 </div>
-                <div class="col-lg-10 order-2">
-                    <textarea id="commands" class="mb-5">
-                        TEXT
+                <div class="col-lg-10 order-2 border-success">
+                    <textarea id="commands" class="mb-5">TEXT
                     </textarea>
-                    <div class="d-grid gap-2 mt-2 mb-2">
+                    <div class="d-grid gap-2 mt-2 mb-1">
                         <button class="btn btn-primary" type="button" id="execute">Execute</button>
-                        <input type="file" class="form-control" id="dbfile" />
+                            <input type="file" class="form-control" id="dbfile" />
                     </div>
                     <div id="error" class="error"></div>
                     <pre id="output">Results will be displayed here</pre>

@@ -11286,3 +11286,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.CodeMirror {
+  border: 1px solid #222;
+  height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
